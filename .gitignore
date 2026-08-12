@@ -1,0 +1,37 @@
+# === Secrets — JAMAIS versionnes ===
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+terraform.tfvars
+*.auto.tfvars
+kubeconfig
+
+# === Python ===
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# === Terraform ===
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# === Docker ===
+docker-compose.override.yml
+
+# === Data ===
+data/raw/
+*.parquet
+*.csv
+
+# === OS / IDE ===
+.DS_Store
+.vscode/
+.idea/
