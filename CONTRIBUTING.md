@@ -1,32 +1,30 @@
 # Guide de contribution
 
 ## Workflow
-[Lequel tu retiens, en une phrase. Renvoie vers l'ADR pour la justification.]
+
+Ce projet suit **GitHub Flow** : la branche `main` est maintenue déployable en
+permanence, et toute modification passe par une branche de courte durée
+intégrée par Pull Request.
+
+La justification de ce choix figure dans
+[ADR-0001](docs/adr/0001-choix-workflow.md).
+
+`main` est protégée : les poussées directes sont refusées.
 
 ## Convention de branches
-| Prefixe | Usage | Exemple |
+
+Format : `<type>/<TICKET>-<description-courte>`
+
+| Préfixe | Usage | Exemple |
 |---|---|---|
-| feat/ | nouvelle fonctionnalite | feat/DATA-12-ingestion-kafka |
-| fix/ | correction de bug | fix/DATA-45-timeout-minio |
-| docs/ | documentation | docs/DATA-08-guide-demarrage |
-| chore/ | maintenance | chore/DATA-33-maj-dependances |
+| `feat/` | nouvelle fonctionnalité | `feat/DATA-12-ingestion-kafka` |
+| `fix/` | correction de bug | `fix/DATA-45-timeout-minio` |
+| `docs/` | documentation | `docs/DATA-08-guide-demarrage` |
+| `refactor/` | refonte sans changement de comportement | `refactor/DATA-21-client-s3` |
+| `chore/` | maintenance, dépendances | `chore/DATA-33-maj-pytest` |
+
+La description est en kebab-case, sans accent, cinq mots maximum.
 
 ## Convention de commits
-Conventional Commits : `<type>(<portee>): <description>`
 
-Exemples :
-- `feat(ingestion): ajout du support des fichiers Parquet`
-- `fix(docker): correction du healthcheck PostgreSQL`
-- `docs(readme): mise a jour du guide de demarrage`
-
-## Pull Requests
-- Maximum 400 lignes modifiees
-- Un seul sujet par PR
-- CI verte obligatoire
-- [tes autres regles]
-
-## Avant de committer
-```bash
-make lint
-make test
-```
+Ce projet applique [Conventional Commits](https://www.conventionalcommits.org/fr/).
